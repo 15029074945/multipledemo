@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="aws-demo" />
         <module name="aws-sqs-demo" />
+        <module name="spring-common-demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +17,7 @@
       <module name="aws-sqs-demo" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="multipledemo" target="1.5" />
+      <module name="spring-common-demo" target="1.8" />
       <module name="springclouddemo" target="1.5" />
     </bytecodeTargetLevel>
   </component>
