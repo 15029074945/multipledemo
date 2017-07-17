@@ -1,21 +1,16 @@
 package com.example.resource;
 
 import com.amazonaws.services.sqs.AmazonSQS;
-import com.amazonaws.services.sqs.model.CreateQueueRequest;
-import com.amazonaws.services.sqs.model.ListQueuesResult;
-import com.amazonaws.services.sqs.model.Message;
-import com.amazonaws.services.sqs.model.ReceiveMessageResult;
-import com.amazonaws.services.sqs.model.SendMessageRequest;
-import com.amazonaws.services.sqs.model.SendMessageResult;
-import com.example.domain.SqsQueueListener;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import com.amazonaws.services.sqs.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Jackson on 2017/7/17.
@@ -29,9 +24,7 @@ public class SqsQueueResource {
   
   @Autowired
   AmazonSQS amazonSQS;
-  
-  @Autowired
-  SqsQueueListener sqsQueueListener;
+
   
   @RequestMapping(value = "fifoQueue", method = RequestMethod.GET)
   public String createFifoQueue() {
