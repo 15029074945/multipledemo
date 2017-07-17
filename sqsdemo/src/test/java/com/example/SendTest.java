@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
+import com.amazonaws.services.sqs.AmazonSQSClient;
 import com.example.domain.SqsQueueListener;
 import com.example.resource.SqsQueueResource;
 import org.junit.Before;
@@ -25,8 +26,8 @@ public class SendTest extends SqsdemoApplicationTests{
   private Logger LOG = LoggerFactory.getLogger(SendTest.class);
   private MockMvc mvc;
   
-  // @Mock(answer = Answers.RETURNS_DEEP_STUBS)
-  // AmazonSQS amazonSQS;
+  @InjectMocks
+  AmazonSQSClient amazonSQS;
   
   @InjectMocks
   SqsQueueListener sqsQueueListener;
@@ -35,7 +36,7 @@ public class SendTest extends SqsdemoApplicationTests{
   public void setUp() throws Exception {
     MockitoAnnotations.initMocks(this);
     SqsQueueResource sqsQueueResource =   new SqsQueueResource();
-    // ReflectionTestUtils.setField(sqsQueueResource, "amazonSQS", amazonSQS);
+    ReflectionTestUtils.setField(sqsQueueResource, "amazonSQS", amazonSQS);
     ReflectionTestUtils.setField(sqsQueueResource, "sqsQueueListener", sqsQueueListener);
     mvc = MockMvcBuilders.standaloneSetup(sqsQueueResource).build();
   }
