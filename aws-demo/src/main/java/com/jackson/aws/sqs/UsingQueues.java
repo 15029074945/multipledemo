@@ -17,10 +17,18 @@ import java.util.Date;
 public class UsingQueues {
     private static final String QUEUE_NAME = "testQueue" +
             new Date().getTime();
-    private static final String accessKey = "";
-    private static final String accessSecret = "";
+    private static final String accessKey = "AKIAJK5HYPF27XUV6KFQ";
+    private static final String accessSecret = "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";
+    
     public static void main(String[] args) {
-
+        // public class QueueListener
+        // {
+        //     @MessageMapping("test_queue")
+        //     private void receiveMessage(TestMessage testMessage)
+        //     {
+        //         System.out.println("Test message received: " + testMessage.getMessage());
+        //     }
+        // }
         // 初始化客户端
         BasicAWSCredentials awsCredentials = new BasicAWSCredentials(accessKey,accessSecret);
         AmazonSQS sqs = AmazonSQSClientBuilder.standard()

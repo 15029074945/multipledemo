@@ -44,8 +44,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/aws-demo/pom.xml" />
         <option value="$PROJECT_DIR$/springclouddemo/pom.xml" />
-        <option value="$PROJECT_DIR$/aws-sqs-demo/pom.xml" />
         <option value="$PROJECT_DIR$/spring-common-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/sqsdemo/pom.xml" />
       </list>
     </option>
   </component>
